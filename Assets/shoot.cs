@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    // TODO reference the better solution
     public GameObject WaterGun; 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class Shoot : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift)){
-            GameObject Water = Instantiate(WaterGun, transform.position, Quaterian.identity) as GameObject;
+            GameObject Water = Instantiate(WaterGun, transform.position, Quaternion.identity) as GameObject;
             Water.GetComponent<Rigidbody>().addForce(tranform.forward * 12);
         }
     }
